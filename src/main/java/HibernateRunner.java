@@ -5,17 +5,25 @@ public class HibernateRunner {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        Profesori newProfesor = new Profesori();
-        System.out.println(newProfesor);
-        newProfesor.numeProfesor = "Barabula Nica";
-        System.out.println(newProfesor);
-        session.save(newProfesor);
-        System.out.println(newProfesor); //add new Profesor
+        ProfesoriMaterie newJoinProfesoriMaterie = new ProfesoriMaterie();
+        System.out.println(newJoinProfesoriMaterie);
+        newJoinProfesoriMaterie.idMaterie = 3;
+        System.out.println(newJoinProfesoriMaterie);
+        newJoinProfesoriMaterie.idProfesor = 6;
+        System.out.println(newJoinProfesoriMaterie);
+        session.save(newJoinProfesoriMaterie);
+        System.out.println(newJoinProfesoriMaterie); //add newJoinProfesoriMaterie
 
         session.getTransaction().commit();
         HibernateUtil.shutdown();
     }
 }
+/*Profesori newProfesor = new Profesori();
+        System.out.println(newProfesor);
+        newProfesor.numeProfesor = "Barabula Nica";
+        System.out.println(newProfesor);
+        session.save(newProfesor);
+        System.out.println(newProfesor);*/ //add new Profesor
  /*Note newNote = new Note();
         System.out.println(newNote);
         newNote.idElev = 10;
