@@ -1,23 +1,43 @@
 import org.hibernate.Session;
 
+import java.util.Random;
+
 public class HibernateRunner {
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+        ElevService elevService = ElevService.getInstance();
+        System.out.println(elevService);
 
-        ProfesoriMaterie newJoinProfesoriMaterie = new ProfesoriMaterie();
-        System.out.println(newJoinProfesoriMaterie);
-        newJoinProfesoriMaterie.idMaterie = 3;
-        System.out.println(newJoinProfesoriMaterie);
-        newJoinProfesoriMaterie.idProfesor = 6;
-        System.out.println(newJoinProfesoriMaterie);
-        session.save(newJoinProfesoriMaterie);
-        System.out.println(newJoinProfesoriMaterie); //add newJoinProfesoriMaterie
+        Elevi elev = elevService.getElev(1);
+        System.out.println(elev);
 
-        session.getTransaction().commit();
+        Elevi elevNou = new Elevi();
+        System.out.println(elevNou);
+        elevNou.numeElev = "Bunu' Samaritean" /*+ new Random().nextInt(7)*/;
+        System.out.println(elevNou);
+        elevNou.idClasa = 3;
+        System.out.println(elevNou);
+        elevService.createElev(elevNou);
+        System.out.println(elevNou);
+
         HibernateUtil.shutdown();
     }
 }
+
+/*Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+
+
+        session.getTransaction().commit();
+        HibernateUtil.shutdown();*/ // base for downCode
+    /*ProfesoriMaterie newJoinProfesoriMaterie = new ProfesoriMaterie();
+        System.out.println(newJoinProfesoriMaterie);
+                newJoinProfesoriMaterie.idMaterie = 3;
+                System.out.println(newJoinProfesoriMaterie);
+                newJoinProfesoriMaterie.idProfesor = 6;
+                System.out.println(newJoinProfesoriMaterie);
+                session.save(newJoinProfesoriMaterie);
+                System.out.println(newJoinProfesoriMaterie);*/ //add newJoinProfesoriMaterie
 /*Profesori newProfesor = new Profesori();
         System.out.println(newProfesor);
         newProfesor.numeProfesor = "Barabula Nica";
