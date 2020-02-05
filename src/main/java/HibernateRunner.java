@@ -5,18 +5,16 @@ public class HibernateRunner {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        //Clasa clasa = session.find(Clasa.class,1);
-        //System.out.println("print"+ clasa);
-
-        Clasa newClasa = new Clasa();
-        System.out.println(newClasa);
-        newClasa.numeClasa = "test run";
-        System.out.println(newClasa);
-        session.save(newClasa);
-        System.out.println(newClasa);
+        Elevi elev = session.find(Elevi.class, 5);
+        System.out.println(elev); //find elev by id
 
         session.getTransaction().commit();
         HibernateUtil.shutdown();
     }
 }
-
+/*Clasa newClasa = new Clasa();
+        System.out.println(newClasa);
+        newClasa.numeClasa = "test run";
+        System.out.println(newClasa);
+        session.save(newClasa);
+        System.out.println(newClasa);*/ //add new entry

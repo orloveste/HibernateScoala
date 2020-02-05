@@ -375,3 +375,4 @@ target
 
 
 # End of https://www.gitignore.io/api/java,linux,macos,windows,intellij+all
+/dictionaries/Lenovo.xml
