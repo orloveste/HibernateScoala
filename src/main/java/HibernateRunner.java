@@ -10,7 +10,7 @@ public class HibernateRunner {
 
         Clasa newClasa = new Clasa();
         System.out.println(newClasa);
-        newClasa.numeClasa = "test de legatura runner";
+        newClasa.numeClasa = "test run";
         System.out.println(newClasa);
         session.save(newClasa);
         System.out.println(newClasa);
