@@ -5,13 +5,23 @@ public class HibernateRunner {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        Materii materiiFind = session.find(Materii.class, 5);
-        System.out.println(materiiFind); //find Materii by id
+        Note newNote = new Note();
+        System.out.println(newNote);
+        newNote.idElev = 10;
+        System.out.println(newNote);
+        newNote.idPredare = 3;
+        System.out.println(newNote);
+        newNote.valoareNota = 9;
+        System.out.println(newNote);
+        session.save(newNote);
+        System.out.println(newNote);
 
         session.getTransaction().commit();
         HibernateUtil.shutdown();
     }
 }
+ /* Materii materiiFind = session.find(Materii.class, 5);
+        System.out.println(materiiFind);*/ //find Materii by id
    /*Elevi elev = session.find(Elevi.class, 5);
         System.out.println(elev);*/ //find elev by id
 /*Clasa newClasa = new Clasa();
