@@ -5,7 +5,18 @@ public class HibernateRunner {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        Note newNote = new Note();
+        Profesori newProfesor = new Profesori();
+        System.out.println(newProfesor);
+        newProfesor.numeProfesor = "Barabula Nica";
+        System.out.println(newProfesor);
+        session.save(newProfesor);
+        System.out.println(newProfesor); //add new Profesor
+
+        session.getTransaction().commit();
+        HibernateUtil.shutdown();
+    }
+}
+ /*Note newNote = new Note();
         System.out.println(newNote);
         newNote.idElev = 10;
         System.out.println(newNote);
@@ -14,12 +25,7 @@ public class HibernateRunner {
         newNote.valoareNota = 9;
         System.out.println(newNote);
         session.save(newNote);
-        System.out.println(newNote);
-
-        session.getTransaction().commit();
-        HibernateUtil.shutdown();
-    }
-}
+        System.out.println(newNote);*/ //add new note to idElev and idPredare
  /* Materii materiiFind = session.find(Materii.class, 5);
         System.out.println(materiiFind);*/ //find Materii by id
    /*Elevi elev = session.find(Elevi.class, 5);
