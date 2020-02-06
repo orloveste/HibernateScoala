@@ -4,7 +4,15 @@ import java.util.Random;
 
 public class HibernateRunner {
     public static void main(String[] args) {
-        ElevService elevService = ElevService.getInstance();
+        NoteService noteService = NoteService.getInstance();
+        //System.out.println(noteService.getIdPredarebyValoareNote(8));
+        // todo rethink sintax after rebuild Note, PredareMaterie and services
+
+        HibernateUtil.shutdown();
+    }
+}
+
+/*ElevService elevService = ElevService.getInstance();
         System.out.println(elevService);
 
         Elevi elev = elevService.getElev(1);
@@ -12,17 +20,12 @@ public class HibernateRunner {
 
         Elevi elevNou = new Elevi();
         System.out.println(elevNou);
-        elevNou.numeElev = "Bunu' Samaritean" /*+ new Random().nextInt(7)*/;
+        elevNou.numeElev = "Bunu' Samaritean" *//*+ new Random().nextInt(7)*//*;
         System.out.println(elevNou);
         elevNou.idClasa = 3;
         System.out.println(elevNou);
         elevService.createElev(elevNou);
-        System.out.println(elevNou);
-
-        HibernateUtil.shutdown();
-    }
-}
-
+        System.out.println(elevNou);*/ //precedent task
 /*Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 

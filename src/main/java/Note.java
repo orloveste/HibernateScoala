@@ -1,7 +1,4 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Note {
@@ -10,15 +7,21 @@ public class Note {
     Integer idNota;
     Integer valoareNota;
     Integer idElev;
-    Integer idPredare;
+    /*Integer idPredare;*/ //rebuild for map
 
-    @Override
+    /*@ManyToOne
+    @JoinColumn (name = "idPredare")
+    ProfesoriMaterie idPredarePentruNota;*/
+    //todo one to many idNota-idPredare
+
+    //todo rebuild toString
+    /*@Override
     public String toString() {
         return "Note{" +
                 "idNota=" + idNota +
                 ", valoareNota=" + valoareNota +
                 ", idElev=" + idElev +
-                ", idPredare=" + idPredare +
+                ", idPredarePentruNota=" + idPredarePentruNota.idPredare +
                 '}';
-    }
+    }*/
 }

@@ -1,7 +1,5 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class ProfesoriMaterie {
@@ -10,13 +8,18 @@ public class ProfesoriMaterie {
     Integer idPredare;
     Integer idProfesor;
     Integer idMaterie;
+    /*@OneToMany(mappedBy = "idPredarePentruNota")
+    List<Note> profesoriMaterieListByNote;*/
+    //todo manyToOne many idPredate from idNota or something
 
-    @Override
+    //todo rebuild toString
+    /*@Override
     public String toString() {
-        return "joinProfesoriMaterie{" +
+        return "ProfesoriMaterie{" +
                 "idPredare=" + idPredare +
                 ", idProfesor=" + idProfesor +
                 ", idMaterie=" + idMaterie +
+                ", profesoriMaterieList=" + profesoriMaterieListByNote +
                 '}';
-    }
+    }*/
 }
