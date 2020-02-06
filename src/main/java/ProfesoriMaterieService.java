@@ -1,7 +1,10 @@
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class ProfesoriMaterieService {
+    private NoteService noteService = NoteService.getInstance();
     private static ProfesoriMaterieService instance;
     private ProfesoriMaterieService(){
 
@@ -13,6 +16,12 @@ public class ProfesoriMaterieService {
         }
         return instance;
     }
+
+    /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
+      NoteService noteService = NoteService.getInstance();
+      return noteService.profesoriMaterieListByNote;
+  }*/ //todo de schimbat sintaxa un idNota sa scoata IdPredareInfo din PredareMaterie
+
     public ProfesoriMaterie getProfesorMaterie(Integer idPredare){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();

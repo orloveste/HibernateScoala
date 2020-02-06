@@ -5,21 +5,20 @@ import java.util.List;
 public class ProfesoriMaterie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer idPredare;
+    /*Integer idPredare;*/ //ManyToOne
     Integer idProfesor;
     Integer idMaterie;
-    /*@OneToMany(mappedBy = "idPredarePentruNota")
-    List<Note> profesoriMaterieListByNote;*/
-    //todo manyToOne many idPredate from idNota or something
 
-    //todo rebuild toString
-    /*@Override
+    @ManyToOne
+    @JoinColumn (name = "idPredare")
+    Note idPredarePentruNota;
+
+    @Override
     public String toString() {
         return "ProfesoriMaterie{" +
-                "idPredare=" + idPredare +
-                ", idProfesor=" + idProfesor +
+                "idProfesor=" + idProfesor +
                 ", idMaterie=" + idMaterie +
-                ", profesoriMaterieList=" + profesoriMaterieListByNote +
+                ", idPredarePentruNota=" + idPredarePentruNota.valoareNota +
                 '}';
-    }*/
+    }
 }

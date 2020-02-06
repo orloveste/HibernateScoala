@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Note {
@@ -7,21 +8,19 @@ public class Note {
     Integer idNota;
     Integer valoareNota;
     Integer idElev;
-    /*Integer idPredare;*/ //rebuild for map
+    Integer idPredare;
 
-    /*@ManyToOne
-    @JoinColumn (name = "idPredare")
-    ProfesoriMaterie idPredarePentruNota;*/
-    //todo one to many idNota-idPredare
+     @OneToMany(mappedBy = "idPredarePentruNota")
+     List<ProfesoriMaterie> profesoriMaterieListByNote;
 
-    //todo rebuild toString
-    /*@Override
+    @Override
     public String toString() {
         return "Note{" +
                 "idNota=" + idNota +
                 ", valoareNota=" + valoareNota +
                 ", idElev=" + idElev +
-                ", idPredarePentruNota=" + idPredarePentruNota.idPredare +
+                ", idPredare=" + idPredare +
+                ", profesoriMaterieListByNote=" + profesoriMaterieListByNote +
                 '}';
-    }*/
+    }
 }
