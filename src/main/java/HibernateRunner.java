@@ -4,12 +4,16 @@ import java.util.Random;
 
 public class HibernateRunner {
     public static void main(String[] args) {
-        //NoteService noteService = NoteService.getInstance();
 
-        ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();
-        System.out.println(profesoriMaterieService.getProfesoriMaterieByNote(5));
+
+
+
+//        ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();
+//        System.out.println(profesoriMaterieService.getProfesoriMaterieByNote(5));
+//        todo revers oneTomany Note and Profesori Materie
+        //NoteService noteService = NoteService.getInstance();
         //System.out.println(noteService.getIdPredarebyValoareNote(8));
-        // todo rethink sintax after rebuild Note, PredareMaterie and services
+
 
         HibernateUtil.shutdown();
     }
