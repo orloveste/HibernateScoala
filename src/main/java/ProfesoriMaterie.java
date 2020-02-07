@@ -18,7 +18,7 @@ public class ProfesoriMaterie {
         return "ProfesoriMaterie{" +
                 "idProfesor=" + idProfesor +
                 ", idMaterie=" + idMaterie +
-                ", idPredarePentruNota=" + idPredarePentruNota.valoareNota +
+                ", idPredarePentruNota=" + idPredarePentruNota.idPredare +
                 '}';
     }
 }
