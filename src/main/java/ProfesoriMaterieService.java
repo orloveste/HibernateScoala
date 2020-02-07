@@ -17,6 +17,10 @@ public class ProfesoriMaterieService {
         return instance;
     }
 
+    public List<ProfesoriMaterie> getProfesoriMaterieByNote(Integer valoareNote){
+        Note note = noteService.getNota(valoareNote);
+        return note.profesoriMaterieListByNote;
+    }
     /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
       NoteService noteService = NoteService.getInstance();
       return noteService.profesoriMaterieListByNote;

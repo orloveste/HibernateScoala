@@ -5,7 +5,7 @@ import java.util.List;
 
 public class NoteService {
 
-    private ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();
+    //private ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();
     private static NoteService instance;
     public NoteService(){
 
@@ -18,7 +18,7 @@ public class NoteService {
         return instance;
     }
 
-    public Note getNota(Note idNota){
+    public Note getNota(Integer idNota){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             return session.find(Note.class, idNota);
