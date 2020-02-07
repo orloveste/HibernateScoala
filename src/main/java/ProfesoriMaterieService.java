@@ -19,7 +19,7 @@ public class ProfesoriMaterieService {
 
     public List<ProfesoriMaterie> getProfesoriMaterieByNote(Integer valoareNote){
         Note note = noteService.getNota(valoareNote);
-        return note.profesoriMaterieListByNote;
+        return note.idProfesoriMaterieListByNote;
     }
     /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
       NoteService noteService = NoteService.getInstance();

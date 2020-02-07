@@ -1,20 +1,21 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Profesori {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer idProfesor;
+    /*Integer idProfesor;*/ // ManyToOne from ProfesoriMaterie
     String numeProfesor;
+
+    @ManyToOne
+    @JoinColumn (name = "idProfesor")
+    ProfesoriMaterie idProfesorFromProfesorMaterie;
 
     @Override
     public String toString() {
         return "Profesori{" +
-                "idProfesor=" + idProfesor +
-                ", numeProfesor='" + numeProfesor + '\'' +
+                "numeProfesor='" + numeProfesor + '\'' +
+                ", idProfesorFromProfesorMaterie=" + idProfesorFromProfesorMaterie.idProfesor +
                 '}';
     }
 }
