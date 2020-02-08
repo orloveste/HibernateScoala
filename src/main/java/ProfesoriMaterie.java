@@ -9,6 +9,7 @@ public class ProfesoriMaterie {
     Integer idProfesor;
     Integer idMaterie;
 
+    //todo manyToMany note profesoriMaterie
     @ManyToOne
     @JoinColumn (name = "idPredare")
     Note idPredareFromNota;
