@@ -17,14 +17,12 @@ public class ProfesoriMaterieService {
         return instance;
     }
 
-    public List<ProfesoriMaterie> getProfesoriMaterieByNote(Integer valoareNote){
-        Note note = noteService.getNota(valoareNote);
-        return note.idProfesoriMaterieListByNote;
+    public ProfesoriMaterie getProfesorMaterieFromNote(Integer idNota){
+        Note note = noteService.getNota(idNota);
+        return note.idPredareFromNote;
     }
-    /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
-      NoteService noteService = NoteService.getInstance();
-      return noteService.profesoriMaterieListByNote;
-  }*/ //todo de schimbat sintaxa un idNota sa scoata IdPredareInfo din PredareMaterie
+
+
 
     public ProfesoriMaterie getProfesorMaterie(Integer idPredare){
         try {
@@ -75,3 +73,11 @@ public class ProfesoriMaterieService {
         }
     }
 }
+ /*public List<ProfesoriMaterie> getProfesoriMaterieByNote(Integer valoareNote){
+ Note note = noteService.getNota(valoareNote);
+        return note.idProfesoriMaterieListByNote;
+                }*/ //not needed
+    /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
+      NoteService noteService = NoteService.getInstance();
+      return noteService.profesoriMaterieListByNote;
+  }*/ //abord
