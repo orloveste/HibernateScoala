@@ -4,7 +4,7 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class ElevService {
-    private ClasaService clasaService = ClasaService.getInstance();
+    ClasaService clasaService = ClasaService.getInstance();
 
     private static ElevService instance;
     private ElevService(){
@@ -18,9 +18,15 @@ public class ElevService {
         return instance;
     }
 
+
+
+//    public Elevi getElevByIdClasa(Integer idClasa){
+//        Clasa clasa = clasaService.getClasa(Clasa.class, idClasa);
+//    }
+
 //    public List<Elevi> getEleviFromClasa (String numeClasa){
-//        Clasa clasa = clasaService.getClasa(numeClasa);
-//        return  clasa.eleviListByClasa;
+//        Clasa clasa = (Clasa) clasaService.getClasa();
+//        return (List<Elevi>) clasa.eleviFromIdClasa;
 //    }
 
     public Elevi getElev(Integer id){

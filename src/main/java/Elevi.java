@@ -14,7 +14,10 @@ public class Elevi  {
     Integer idElev;
     String numeElev;
 
-    Integer idClasa;
+    //Integer idClasa;
+    @OneToMany
+    @JoinColumn (name = "idClasa")
+    Clasa idClasaFromElevi;
     /*@ManyToOne
     @JoinColumn (name = "idClasa")
     Clasa idClasaFromElevi;*/
@@ -24,7 +27,7 @@ public class Elevi  {
         return "Elevi{" +
                 "idElev=" + idElev +
                 ", numeElev='" + numeElev + '\'' +
-                ", idClasa=" + idClasa +
+                ", idClasaFromElevi=" + idClasaFromElevi.numeClasa +
                 '}';
     }
 }
