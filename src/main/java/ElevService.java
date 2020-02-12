@@ -1,7 +1,11 @@
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class ElevService {
+    private ClasaService clasaService = ClasaService.getInstance();
+
     private static ElevService instance;
     private ElevService(){
 
@@ -13,6 +17,12 @@ public class ElevService {
         }
         return instance;
     }
+
+//    public List<Elevi> getEleviFromClasa (String numeClasa){
+//        Clasa clasa = clasaService.getClasa(numeClasa);
+//        return  clasa.eleviListByClasa;
+//    }
+
     public Elevi getElev(Integer id){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -23,7 +33,7 @@ public class ElevService {
             return null;
         }
     }
-    public void createElev(Elevi newElev){
+    public void createElev(String newElev){
         Transaction transaction = null;
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();

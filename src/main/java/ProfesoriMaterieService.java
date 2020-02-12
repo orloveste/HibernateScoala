@@ -24,7 +24,7 @@ public class ProfesoriMaterieService {
     /*public List<ProfesoriMaterie> getIdPredarebyValoareNote(Integer valoareNota){
       NoteService noteService = NoteService.getInstance();
       return noteService.profesoriMaterieListByNote;
-  }*/ //todo de schimbat sintaxa un idNota sa scoata IdPredareInfo din PredareMaterie
+  }*/ // de schimbat sintaxa un idNota sa scoata IdPredareInfo din PredareMaterie
 
     public ProfesoriMaterie getProfesorMaterie(Integer idPredare){
         try {

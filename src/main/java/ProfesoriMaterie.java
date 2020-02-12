@@ -9,7 +9,6 @@ public class ProfesoriMaterie {
     Integer idProfesor;
     Integer idMaterie;
 
-    //todo manyToMany note profesoriMaterie
     @ManyToOne
     @JoinColumn (name = "idPredare")
     Note idPredareFromNota;
@@ -23,7 +22,8 @@ public class ProfesoriMaterie {
         return "ProfesoriMaterie{" +
                 "idProfesor=" + idProfesor +
                 ", idMaterie=" + idMaterie +
-                ", idPredarePentruNota=" + idPredareFromNota.idPredare +
+                ", idPredareFromNota=" + idPredareFromNota +
+                ", profesoriListByProfesoriMaterie=" + profesoriListByProfesoriMaterie +
                 '}';
     }
 }
