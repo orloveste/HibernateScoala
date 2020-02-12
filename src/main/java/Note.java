@@ -8,10 +8,11 @@ public class Note {
     Integer idNota;
     Integer valoareNota;
     Integer idElev;
-    Integer idPredare;
 
-     @OneToMany(mappedBy = "idPredareFromNota")
-     List<ProfesoriMaterie> idProfesoriMaterieListByNote;
+//    Integer idPredare;
+    @ManyToOne
+    @JoinColumn (name = "idPredare")
+    ProfesoriMaterie idPredareFromNote;
 
     @Override
     public String toString() {
@@ -19,8 +20,11 @@ public class Note {
                 "idNota=" + idNota +
                 ", valoareNota=" + valoareNota +
                 ", idElev=" + idElev +
-                ", idPredare=" + idPredare +
-                ", profesoriMaterieListByNote=" + idProfesoriMaterieListByNote +
+                ", idPredareFromNote=" + idPredareFromNote.idProfesor +
+                ", idPredareFromNote=" + idPredareFromNote.idMaterie +
                 '}';
     }
+//     @OneToMany(mappedBy = "idPredareFromNota")
+//     List<ProfesoriMaterie> idProfesoriMaterieListByNote;
+
 }
