@@ -10,9 +10,9 @@ public class Clasa {
     Integer idClasa;
     String numeClasa;
 
-//    @ManyToOne
-//    @JoinColumn (name = "idClasa")
-//    Elevi eleviFromIdClasa;
+    @ManyToOne
+    @JoinColumn (name = "idClasa")
+    Elevi eleviFromIdClasa;
 
 //    @OneToMany (mappedBy = "idElev")
 //    List<Elevi> eleviListByClasa;
