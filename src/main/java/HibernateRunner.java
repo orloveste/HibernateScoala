@@ -4,7 +4,9 @@ import java.util.Random;
 
 public class HibernateRunner {
     public static void main(String[] args) {
-
+        ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();
+        ProfesoriMaterie note = profesoriMaterieService.getProfesorMaterieFromNote(3);
+        System.out.println("Ce ne da id nota?: "+ note);
 
 
 
