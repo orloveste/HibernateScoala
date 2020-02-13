@@ -15,6 +15,8 @@ public class Elevi  {
     String numeElev;
 
     Integer idClasa;
+
+    //todo one2many to clasa
 //    @OneToMany
 //    @JoinColumn (name = "idClasa")
 //    Clasa idClasaFromElevi;

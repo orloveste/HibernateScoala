@@ -10,7 +10,7 @@ public class ClasaService {
             instance = new ClasaService();
         }return  instance;
     }
-    public static Clasa getClasa(Integer idClasa){
+    public Clasa getClasa(Integer idClasa){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             Clasa clasa = session.find(Clasa.class, idClasa);

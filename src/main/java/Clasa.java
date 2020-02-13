@@ -10,6 +10,7 @@ public class Clasa {
     //Integer idClasa;
     String numeClasa;
 
+    //todo make one2many in elevi - cancel that
     @ManyToOne
     @JoinColumn (name = "idClasa")
     Elevi eleviFromIdClasa;

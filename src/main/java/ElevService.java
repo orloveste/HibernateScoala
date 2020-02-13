@@ -17,12 +17,11 @@ public class ElevService {
         }
         return instance;
     }
-
-
-
-//    public Elevi getElevByIdClasa(Integer idClasa){
-//        Clasa clasa = clasaService.getClasa(Clasa.class, idClasa);
-//    }
+    //todo review after remake elevi and clasa
+    public Elevi getElevByIdClasa(Integer idClasa){
+        Clasa clasa = clasaService.getClasa(idClasa);
+        return clasa.eleviFromIdClasa;
+    }
 
 //    public List<Elevi> getEleviFromClasa (String numeClasa){
 //        Clasa clasa = (Clasa) clasaService.getClasa();
