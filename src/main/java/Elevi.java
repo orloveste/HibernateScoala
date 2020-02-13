@@ -17,6 +17,8 @@ public class Elevi  {
     Integer idClasa;
 
     //todo one2many to clasa
+    @OneToMany (mappedBy = "idClasa")
+    List<Clasa> eleviListByClasa;
 //    @OneToMany
 //    @JoinColumn (name = "idClasa")
 //    Clasa idClasaFromElevi;
@@ -30,6 +32,7 @@ public class Elevi  {
                 "idElev=" + idElev +
                 ", numeElev='" + numeElev + '\'' +
                 ", idClasa=" + idClasa +
+                ", eleviListByClasa=" + eleviListByClasa +
                 '}';
     }
 }

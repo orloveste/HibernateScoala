@@ -1,6 +1,10 @@
 import org.hibernate.Session;
 
+import java.util.List;
+
 public class ClasaService {
+    ElevService elevService = ElevService.getInstance();
+
     private static ClasaService instance;
     private ClasaService(){
 
@@ -10,6 +14,12 @@ public class ClasaService {
             instance = new ClasaService();
         }return  instance;
     }
+
+    public List<Clasa> getElevByIdClasa(Integer idElev){
+        Elevi elevi = elevService.getElev(idElev);
+        return  elevi.eleviListByClasa;
+    }
+
     public Clasa getClasa(Integer idClasa){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();

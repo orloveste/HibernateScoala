@@ -7,22 +7,22 @@ import java.util.List;
 public class Clasa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //Integer idClasa;
-    String numeClasa;
+    Integer idClasa;
+//    @ManyToOne
+//    @JoinColumn (name = "idClasa")
+//    Elevi eleviFromIdClasa;
 
-    //todo make one2many in elevi - cancel that
-    @ManyToOne
-    @JoinColumn (name = "idClasa")
-    Elevi eleviFromIdClasa;
+    String numeClasa;
 
     @Override
     public String toString() {
         return "Clasa{" +
-                "numeClasa='" + numeClasa + '\'' +
-                ", eleviFromIdClasa=" + eleviFromIdClasa +
+                "idClasa=" + idClasa +
+                ", numeClasa='" + numeClasa + '\'' +
                 '}';
     }
+}
+
+
 //    @OneToMany (mappedBy = "idElev")
 //    List<Elevi> eleviListByClasa;
-
-}

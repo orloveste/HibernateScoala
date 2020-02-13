@@ -1,19 +1,18 @@
 import org.hibernate.Session;
 
+import java.util.List;
 import java.util.Random;
 
 public class HibernateRunner {
     public static void main(String[] args) {
         System.out.println("^^^^^^^^^^^^^start code^^^^^^^^^^^^^");
+        ClasaService clasaService = ClasaService.getInstance();
         ElevService elevService = ElevService.getInstance();
-        Elevi eleviFromClasa = elevService.getElevByIdClasa(1); //todo exception
-        //java.lang.IllegalArgumentException: Provided id of the wrong type for class Clasa. Expected: class java.lang.String, got class java.lang.Integer
-        //	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3531)
-        //	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3474)
-        //	at ClasaService.getClasa(ClasaService.java:16)
-        //	at ElevService.getElevByIdClasa(ElevService.java:21)
-        //	at HibernateRunner.main(HibernateRunner.java:9)
+        Elevi eleviFromClasa = elevService.getElev(1); //todo exception
+        List<Clasa> eleviFromClasa2 = clasaService.getElevByIdClasa(2); //todo exception
+
         System.out.println("Elev by id: "+ eleviFromClasa);
+        System.out.println("Elev by id: "+ eleviFromClasa2);
 
         System.out.println("*********second start*********");
         ProfesoriMaterieService profesoriMaterieService = ProfesoriMaterieService.getInstance();

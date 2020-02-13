@@ -17,21 +17,21 @@ public class ElevService {
         }
         return instance;
     }
-    //todo review after remake elevi and clasa
-    public Elevi getElevByIdClasa(Integer idClasa){
-        Clasa clasa = clasaService.getClasa(idClasa);
-        return clasa.eleviFromIdClasa;
-    }
+
+//    public Elevi getElevByIdClasa(Integer idClasa){
+//        Clasa clasa = clasaService.getClasa(idClasa);
+//        return clasa.eleviFromIdClasa;
+//    }
 
 //    public List<Elevi> getEleviFromClasa (String numeClasa){
 //        Clasa clasa = (Clasa) clasaService.getClasa();
 //        return (List<Elevi>) clasa.eleviFromIdClasa;
 //    }
 
-    public Elevi getElev(Integer id){
+    public Elevi getElev(Integer idElev){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
-            Elevi elev = session.find(Elevi.class, id);
+            Elevi elev = session.find(Elevi.class, idElev);
             return elev;
         }catch (Exception exGetElev){
             exGetElev.printStackTrace();
