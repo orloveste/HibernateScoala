@@ -92,3 +92,7 @@ update scoala.note set scoala.note.idPredare ='8' where idNota=23;
 update scoala.note set scoala.note.idPredare ='9' where idNota=24;
 update scoala.note set scoala.note.idPredare ='10' where idNota=25;
 update scoala.note set scoala.note.idPredare ='11' where idNota=26;
+
+//afiseaza nota cea mai mare dintr-o clasa
+select e.idElev, max(n.valoareNota) as maxNota from clasa join elevi e on clasa.idClasa = e.idClasa join note n on e.idElev = n.idElev
+where clasa.idClasa = 1 group by e.idElev order by maxNota desc limit 1;
