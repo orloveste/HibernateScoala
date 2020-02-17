@@ -1,5 +1,6 @@
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -17,18 +18,25 @@ public class ElevService {
         }
         return instance;
     }
+    // afiseze nota cea mai mare dintr-o clasa.
+    public List<Elevi> getAllElevi(Integer idClasa){
+
+        //select e.idElev, max(n.valoareNota) as maxNota from clasa join elevi e on clasa.idClasa = e.idClasa join note n on e.idElev = n.idElev
+        //where clasa.idClasa = 1 group by e.idElev order by maxNota desc limit 1;
+        String hql = "select e.numeElev, max(n.valoareNota) as maxNota " +
+                "from Clasa c join c.elevi e join e.note n where c.idClasa = :idClasa " +//todo Nu face legatura cu sql
+                "group by e order by maxNota desc";
+        ;        Query query = HibernateUtil.getSessionFactory().openSession().createQuery(hql);
+        ((Query) query).setParameter("idClasa", idClasa);
+        query.setMaxResults(1);
 
 
+        List<Elevi> elev =  query.list();
 
-//    public Elevi getElevByIdClasa(Integer idClasa){
-//        Clasa clasa = clasaService.getClasa(Clasa.class, idClasa);
-//    }
 
-//    public List<Elevi> getEleviFromClasa (String numeClasa){
-//        Clasa clasa = (Clasa) clasaService.getClasa();
-//        return (List<Elevi>) clasa.eleviFromIdClasa;
-//    }
-
+        System.out.println(elev);
+        return elev;
+    }
     public Elevi getElev(Integer id){
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
