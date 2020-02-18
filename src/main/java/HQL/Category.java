@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "CATEGORY")
+@Table(name = "CATEGORY")//todo else
 public class Category {
     private long id;
     private String name;
@@ -20,14 +20,14 @@ public class Category {
     }
 
     @Id
-    @Column(name = "CATEGORY_ID")
+    @Column(name = "CATEGORY_ID")//todo else
     @GeneratedValue
-    public  long getId(){
+    public  long getId(){//todo else
         return id;
     }
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    public Set<Product> getProducts(){
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)//todo else
+    public Set<Product> getProducts(){//todo else
         return products;
     }
 
