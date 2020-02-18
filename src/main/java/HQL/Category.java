@@ -25,4 +25,18 @@ public class Category {
     public  long getId(){
         return id;
     }
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    public Set<Product> getProducts(){
+        return products;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", products=" + products +
+                '}';
+    }
 }
