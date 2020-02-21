@@ -41,14 +41,23 @@ public class Orders {
         return product;
     }
 
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", purchaseDate=" + purchaseDate +
-                ", amount=" + amount +
-                ", product=" + product +
-                '}';
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

@@ -9,10 +9,9 @@ public class Category {
     private long id;
     private String name;
 
-    private Set<Product>products;
+    private Set<Product> products;
 
     public Category(){
-
     }
 
     public Category(String name){
@@ -31,12 +30,19 @@ public class Category {
         return products;
     }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", products=" + products +
-                '}';
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
     }
 }
