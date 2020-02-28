@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "CATEGORY")//todo else
+@Table(name = "category")//todo else
 public class Category {
     private long id;
     private String name;

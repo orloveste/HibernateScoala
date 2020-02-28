@@ -11,6 +11,7 @@ public class Clasa {
 //    @ManyToOne
 //    @JoinColumn (name = "idClasa")
 //    Elevi eleviFromIdClasa;
+    //todo elevi si note pentru eleviService
 
     String numeClasa;
 

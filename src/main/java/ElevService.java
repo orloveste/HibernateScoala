@@ -5,7 +5,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class ElevService {
-    ClasaService clasaService = ClasaService.getInstance();
 
     private static ElevService instance;
     private ElevService(){
